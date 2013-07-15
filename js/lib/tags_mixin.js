@@ -17,4 +17,8 @@ Tags.prototype = {
     this._tags = this._tags || [];
     this._tags.push(tag);
   }
+, removeTag: function(tag) {
+    var tags = this._tags;
+    tags.splice(tags.indexOf(tag),1);
+  }
 };

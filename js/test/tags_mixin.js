@@ -10,10 +10,16 @@ describe("TagsMixin", function() {
   });
 
   it("adds a tag", function() {
-    object = new Class();
+    var object = new Class();
     object.addTag("tutsplus");
 
     expect(object.listTags()).toEqual([ "tutsplus" ]);
   });
-  //it("removes a tag", function() {});
+  it("removes a tag", function() {
+    var object = new Class();
+    object.addTag("tutsplus");
+    object.removeTag("tutsplus")
+
+    expect(object.listTags()).toEqual([]);
+  });
 });
