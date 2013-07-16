@@ -16,9 +16,14 @@ Tags.prototype = {
 , addTag: function(tag) {
     this._tags = this._tags || [];
     this._tags.push(tag);
+    this.publish && this.publish("tagAdded");
   }
 , removeTag: function(tag) {
     var tags = this._tags;
     tags.splice(tags.indexOf(tag),1);
+  }
+
+, countTags: function() {
+    return this.listTags().length;
   }
 };
