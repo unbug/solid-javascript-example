@@ -6,12 +6,13 @@ describe("Promises", function() {
     getJSON(sample_url)
     .then(function() {
       output += "JSON got back!";
-    })
-    .then(function() {
-      expect(output).toEqual("JSON got back");
+    }, function(errorData) {
+      // If you want to check the error being displayed, uncomment the debugger
+      // statement and inspect `errorData[2]`.
+      // debugger;
+      expect(output).toEqual("JSON got back", "** Promise failed **");
+      done();
     });
-
-    done();
 
   });
 });

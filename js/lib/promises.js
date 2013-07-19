@@ -3,8 +3,12 @@ function getJSON(sample_url) {
     $.ajax({
       dataType : "json",
       url      : sample_url,
-      success  : function(data) { fulfill(data); },
-      error    : function(error) { unfulfill(data); }
+      success  : function(data) {
+        fulfill(data); 
+      },
+      error    : function(xhr, status, error) {
+        unfulfill([xhr,status,error]);
+      }
     });
   });
 
