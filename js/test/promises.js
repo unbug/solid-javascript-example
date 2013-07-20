@@ -10,7 +10,10 @@ describe("Promises", function() {
       // If you want to check the error being displayed, uncomment the debugger
       // statement and inspect `errorData[2]`.
       // debugger;
-      expect(output).toEqual("JSON got back", "** Promise failed **");
+      expect(output).toEqual("JSON got back!", "** Promise failed **");
+      done();
+    }).then(function() {
+      expect(output).toEqual("JSON got back!");
       done();
     });
 
